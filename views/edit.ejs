@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <h1 class="header">Edit Collection</h1>
+        <form class="container" method="POST" action="<% bookstore._id%>?_method=PUT">
+            <input class="form-control" placeholder="bookname" name="bookname" value="<%=bookstore.bookname%>">
+            </input>
+            <input class="form-control" placeholder="author" name="author" value="<%=bookstore.author%>">
+            </input>
+            <input class="form-control" placeholder="language" name="language" value="<%=bookstore.language%>"></input>
+            <input class="form-control" placeholder="pages" name="pages" value="<%=bookstore.pages%>"></input>
+            <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">edit a book</button>
+            <button class="w-100 btn btn-lg btn-primary mt-2" href="/books" type="submit">Cancel</button>
+        </form>
+    </div>
+    <%- include('partials/footer'); -%>

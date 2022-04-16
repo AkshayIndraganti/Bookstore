@@ -1,0 +1,49 @@
+<%- include('partials/header'); -%>
+
+    <div class="details content">
+        <h2>
+            <%= bookstore.bookname %>
+        </h2>
+        <div class="content">
+            <h2>
+                <%= bookstore.author %>
+            </h2>
+        </div>
+        <div class="content">
+            <h2>
+                <%= bookstore.language %>
+            </h2>
+        </div>
+        <div class="content">
+            <h2>
+                <%= bookstore.pages %>
+            </h2>
+        </div>
+
+        <a class="delete" data-doc="<%= bookstore.id %>">
+            <button>Delete</button>
+        </a>
+
+        <a href="/books/edit/<%= bookstore.id%>">
+            <button>Edit </button>
+        </a>
+
+        <a href="/books"> <button>Cancel</button>
+        </a>
+    </div>
+
+    <script>
+        const trashcan = document.querySelector('a.delete');
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/books/${trashcan.dataset.doc}`;
+            fetch(endpoint, {
+                method: 'DELETE',
+            })
+                .then(response => response.json())
+                .then(data => window.location.href = data.redirect)
+                .catch(err => console.log(err));
+        });
+
+    </script>
+
+    <%- include('partials/footer'); -%>

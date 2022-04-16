@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+
+    <div class="container">
+        <h1 class="header">Book Collection</h1>
+
+        <form class="container" method="POST">
+
+            <label class="form-group mt-2">
+                <input class="form-control" placeholder="bookname" name="bookname" required>
+                </input>
+            </label>
+
+            <label class="form-group mt-2">
+                <input class="form-control" placeholder="author" name="author" required> </input>
+            </label>
+
+            <label class="form-group mt-2">
+                <input class="form-control" placeholder="language" name="language" required></input>
+            </label>
+
+            <label class="form-group mt-2">
+                <input class="form-control" placeholder="pages" name="pages" required></input>
+            </label>
+
+            <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Add a book</button>
+
+        </form>
+    </div>
+
+    <%- include('partials/footer'); -%>
